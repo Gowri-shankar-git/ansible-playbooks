@@ -1,0 +1,16 @@
+---
+- name: to instll a application
+  hosts: all
+  become: true
+  tasks:
+    - name: install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: start and enable nginx
+      systemd:
+        name: nginx
+        state: started
+        enabled: true

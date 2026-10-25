@@ -1,0 +1,12 @@
+---
+- name: copy files on remote server 
+  hosts: all
+
+  tasks:
+
+    - name: copy files
+      copy: 
+        src: /etc/ansible/playbooks/myfile.txt
+        dest: /tmp/
+        mode: ugo=rw
+        backup: true 

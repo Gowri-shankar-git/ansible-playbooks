@@ -1,0 +1,11 @@
+---
+- name: remove a cronjob
+  hosts: all
+
+  tasks:
+  - name: to remove cronjob
+    cron:
+      name: run test script
+      state: absent
+      user: gowri
+    

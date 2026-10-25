@@ -1,0 +1,11 @@
+---
+- name: firewall services
+  hosts: all
+  become: true
+
+  tasks:
+    - name: firewall enable
+      community.general.ufw:
+        rule: deny
+        name: "Nginx Full"
+        state: enabled

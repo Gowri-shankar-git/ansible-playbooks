@@ -1,0 +1,15 @@
+---
+- name: cron setups
+  hosts: all
+
+  tasks:
+  - name: add cron job
+    cron:
+      name: run test script
+      minute: 58
+      hour: 15
+      day: 02
+      month: "*"
+      weekday: "*"
+      user: gowri
+      job: home/test.sh

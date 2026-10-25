@@ -1,0 +1,16 @@
+---
+- name: user management
+  hosts: all
+  become: true
+
+  tasks:
+  - name: create user
+    user:
+      name: nick
+      comment: new user added for QA team
+      shell: /bin/bash
+      home: /home/nick
+      groups: QA,nick
+      state: absent
+      remove: yes
+       

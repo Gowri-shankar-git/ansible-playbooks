@@ -1,0 +1,14 @@
+---
+- name: file module
+  hosts: all
+ 
+  tasks:
+  - name: creating a file
+    file:
+      path: /tmp/newfile.txt
+      state: absent
+
+  - name: creating a directory
+    file:
+      path: /tmp/myfolder
+      state: absent

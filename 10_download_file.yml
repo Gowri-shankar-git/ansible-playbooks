@@ -1,0 +1,12 @@
+---
+- name: download a file
+  hosts: all
+  
+  tasks: 
+  - name: download file
+    get_url:
+      url: https://www.python.org/ftp/python/pymanager/python-manager-26.4.msix
+      dest: /home/gowri
+      owner: gowri
+      group: gowri
+      mode: 0777
